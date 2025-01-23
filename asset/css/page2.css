@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Carrousel avec Points de Navigation */
+.carousel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+main section div button:hover{
+    background-color: blueviolet;
+}
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 300px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.carousel-dots .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .dot.active {
+    background-color: #717171;
+}
+

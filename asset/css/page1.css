@@ -1,0 +1,42 @@
+/* Carrousel Simple */
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 300px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
