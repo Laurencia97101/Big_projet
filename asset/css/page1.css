@@ -1,221 +1,263 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-emphasis: center;
-    /* background-color: #1e272e; */
+/* Styles généraux */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Correction de text-emphasis */
+  /* background-color: #1e272e; */
 }
 
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 200px;
-    gap: 16px;
-    transition: 0.3s;
+.span_color {
+  color: #902596;
 }
 
-.container li{
-    position: relative;
-    overflow: hidden;
-    flex: 0 0 80px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+.neon-text span {
+  display: inline-block;
+  animation: revealAndTransform 1s ease-in-out infinite alternate;
+  animation-delay: calc(0.1s * var(--i)); /* Décalage de l'animation pour chaque lettre */
 }
 
-.container li img{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.container li, .container li img{
-    transition: 0.3s;
-}
-
-.container li .content{
-    transition: 1.5s ease;
-}
-
-.container span{
-    text-align: center;
-    width: 75%;
-}
-
-.container h2{
-    font-weight: 100;
-    font-size: 20px;
-    line-height: 4px;
-    margin-bottom: 3px;
-    white-space: nowrap;
-    color: #fff;
-}
-
-.container p{
-    color: #ddd;
-    font-size: 10px;
-    width: 100%;
-}
-
-.container li .content{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    color: #fff;
-    padding: 15px;
-    background: linear-gradient(
-        0deg, rgb(0 0 0/ 70%) 10%,
-        rgb(255 255 255 / 0%) 100%
-    );
-
+@keyframes revealAndTransform {
+  0% {
     opacity: 0;
-    visibility: hidden;
-}
-
-.container :hover{
-    gap:0;
-}
-
-.container li .content span{
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    bottom: 0px;
-    translate: -50%;
-    scale: 0.85;
-    visibility: hidden;
+    transform: scale(0.5) rotate(-20deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  100% {
     opacity: 0;
+    transform: scale(1.2) rotate(20deg);
+  }
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 200px;
+  gap: 16px;
+  transition: 0.3s;
 }
 
-.container li:hover{
-    flex: 0 1 260px;
-    scale: 1.1;
-    z-index: 10;
-    opacity: 1;
+.container li {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #ddd;
 }
 
-.container li:hover .content{
-    opacity: 1;
-    visibility: visible;
+.container li img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Correction de translate */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.container li:hover span{
-    scale: 1;
-    opacity: 1;
-    visibility: visible;
+.container li, .container li img {
+  transition: 0.3s;
 }
+
+.container li .content {
+  transition: 1.5s ease;
+}
+
+.container span {
+  text-align: center;
+  width: 75%;
+}
+
+.container h2 {
+  font-weight: 100;
+  font-size: 20px;
+  margin-bottom: 3px;
+  color: #fff;
+}
+
+.container p {
+  color: #ddd;
+  font-size: 10px;
+  width: 100%;
+}
+
+.container li .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  color: #fff;
+  padding: 15px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 10%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container:hover {
+  gap: 0;
+}
+
+.container li .content span {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 0px;
+  transform: translateX(-50%); /* Correction de translate */
+  transform: scale(0.85);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.container li:hover {
+  flex: 0 1 260px;
+  transform: scale(1.1);
+  z-index: 10;
+  opacity: 1;
+}
+
+.container li:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container li:hover span {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Carrousel avec Points de Navigation */
 .carousel {
-    position: relative;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
+  position: relative;
+  width: 60%;
+  margin: auto;
+  overflow: hidden;
 }
 
-main section div button:hover{
-    background-color: blueviolet;
+main section div img {
+  width: 100%;
+  position: fixed;
 }
+
+main section div button:hover {
+  background-color: blueviolet;
+}
+
 .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    background-color: lightgray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    height: 300px;
+  min-width: 100%;
+  box-sizing: border-box;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 300px;
 }
 
 .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
 }
 
-
 .carousel-button.prev {
-    left: 0;
+  left: 0;
 }
 
 .carousel-button.next {
-    right: 0;
+  right: 0;
 }
 
 .carousel-dots {
-    text-align: center;
-    margin-top: 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 .carousel-dots .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .carousel-dots .dot.active {
-    background-color: #717171;
+  background-color: #717171;
 }
 
 .container-video {
-    width: 300px;
-    height: 185px;
-    position: relative;
-    transform-style: preserve-3d; 
-    transform: perspective(1000px);
-    animation: gallery 20s linear infinite;
-    cursor: pointer;
+  width: 300px;
+  height: 185px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: gallery 20s linear infinite;
+  cursor: pointer;
 }
 
 .container-video span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transform: rotateY(calc(var(--i) * 95deg)) translateZ(410px);
-    -webkit-box-reflect: below 6.5px linear-gradient(transparent, transparent, rgba(3, 3, 3, 0.2));
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  display: flex; /* Ajouté pour centrer les éléments */
+  align-items: center;
+  justify-content: center; /* Correction de align-items et justify-content */
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 95deg)) translateZ(410px);
+  -webkit-box-reflect: below 6.5px linear-gradient(transparent, transparent, rgba(3, 3, 3, 0.2));
 }
 
 .container-video span iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    border: 6px ridge #ccc;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  border: none;
 }
 
 @keyframes gallery {
-    0% {
-        transform: perspective(1000px) rotateY(0deg);
-    }
-    100% {
-        transform: perspective(1000px) rotateY(360deg);
-    }
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+@media (max-width: 708px) {
+  header h2 {
+    width: 110px;
+  }
+  header button {
+    width: 40%;
+  }
+  .carousel {
+    height: 100%;
+  }
 }
 
+/*# sourceMappingURL=page1.css.map */

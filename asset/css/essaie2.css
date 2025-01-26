@@ -18,6 +18,7 @@ body {
 /* Styles pour les cartes */
 .wrapper {
     perspective: 3000px;
+    margin-top: 20px; /* Ajout d'un margin-top pour séparer les sections */
 }
 
 .card {
@@ -45,7 +46,7 @@ body {
 }
 
 .front-page {
-    background-image: url(../img/bg_animation.jpg);
+    background-image: url(../img/woman-using-futuristic-technology.jpg); /* Chemin d'image actualisé */
     background-size: cover;
 }
 

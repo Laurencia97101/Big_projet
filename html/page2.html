@@ -14,7 +14,15 @@
 <body>
     <header>
         <h2>
-            <img class="logo" src="../asset/img/logo.jpg" alt="Logo">
+            <span>M</span>
+            <span>o</span>
+            <span>l</span>
+            <span>e</span>
+            <span>n</span>
+            <span>G</span>
+            <span>e</span>
+            <span>e</span>
+            <span>K</span>
         </h2>
 
         <nav>
@@ -37,24 +45,7 @@
     </header>
 
     <main>
-        <section>
-            <div class="carousel">
-                <div class="carousel-container">
-                    <div class="carousel-item">
-                        <img src="../asset/img/carroussel.jpg" alt="Carrousel Image">
-                    </div>
-                    <div class="carousel-item">2</div>
-                    <div class="carousel-item">3</div>
-                </div>
-                <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
-                <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
-                <div class="carousel-dots">
-                    <span class="dot" onclick="currentSlide(0)"></span>
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                </div>
-            </div>
-        </section>
+        
 
         <section>
             <ul class="container">
@@ -68,7 +59,7 @@
             </ul>
         </section>
 
-        <!DOCTYPE html>
+
 
 
 
@@ -96,35 +87,5 @@
     <script type="module" src="../asset/js/main.js"></script>
     <script src="../asset/js/main2.js"></script>
 
-    <!-- <script>
-        // JavaScript pour le carrousel
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            const slides = document.querySelector('.carousel-container');
-            const dots = document.querySelectorAll('.dot');
-            const totalSlides = slides.children.length;
-            currentIndex = (index + totalSlides) % totalSlides;
-            slides.style.transform = `translateX(${-currentIndex * 100}%)`;
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[currentIndex].classList.add('active');
-        }
-
-        function prevSlide() {
-            showSlide(currentIndex - 1);
-        }
-
-        function nextSlide() {
-            showSlide(currentIndex + 1);
-        }
-
-        function currentSlide(index) {
-            showSlide(index);
-        }
-
-        setInterval(() => {
-            nextSlide();
-        }, 3000);
-    </script> -->
 </body>
 </html>

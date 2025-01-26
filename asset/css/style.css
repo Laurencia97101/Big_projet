@@ -11,7 +11,7 @@
 /* Déclaration des variables */
 :root {
     --var-bg-color: #7743e9;
-    --var-secondary-color: #6e51cf;
+    --var-secondary-color: #902596;
     --var-text-color: #fff;
     --var-text-color-dark: #333;
     --var-bg-light: #f0f4ff;
@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     background-color: var(--var-bg-light);
     color: var(--var-text-color-dark);
     font-weight: 600;
@@ -27,8 +27,10 @@ body {
     margin: 0;
 }
 
+
+
 header {
-    height: 8rem;
+    height: 5em;
     background-color: white;
     padding: 0 2rem;
     text-align: center;
@@ -97,12 +99,13 @@ main {
     position: fixed;
     right: 0;
     bottom: 3rem;
-    background-color: #ccb6fa;
+    background-color: #902596;
     padding: 10px;
     border-radius: 2px;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    color: #f8f2fa;
 }
 
 .reseaux .carte {
@@ -117,7 +120,7 @@ main {
 }
 
 .reseaux .carte:hover {
-    background-color: #f8f2fa;
+    background-color: var(--var-text-color-dark);
     border-radius: 5px;
 }
 
@@ -127,7 +130,7 @@ footer {
     width: 100%;
     height: 20vh;
     background-color: var(--var-text-color);
-    margin-top: 2rem;
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,6 +148,7 @@ footer hr {
 }
 
 footer img {
+    margin-top: 3rem;
     width: 150px;
 }
 
@@ -171,6 +175,8 @@ footer p {
     .menu-burger {
         display: block;
     }
+
+    
 
     header img {
         width: 80px;
@@ -202,6 +208,7 @@ footer p {
 
     header nav ul.active {
         display: flex;
+        flex-wrap: wrap;
     }
 
     header nav ul li {
